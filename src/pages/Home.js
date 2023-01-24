@@ -12,7 +12,7 @@ function Home() {
         </p>
         <a
           className="App-link"
-          href="https://github.com/raqinshikder"
+          href="https://github.com/qleqs"
           target="_blank"
           rel="noopener noreferrer"
         >

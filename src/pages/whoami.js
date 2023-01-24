@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TypingEffect.css";
 
-function TypingEffect() {
+function Whoami({ onFinish }) {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -12,6 +12,7 @@ function TypingEffect() {
         setIndex(index + 1);
       } else {
         clearInterval(interval);
+        onFinish && onFinish();
       }
     }, 200);
     return () => clearInterval(interval);
@@ -24,7 +25,7 @@ function TypingEffect() {
   );
 }
 
-export default TypingEffect;
+export default Whoami;
 
 
 
