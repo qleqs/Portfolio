@@ -21,3 +21,22 @@
   .App-link {
     color: #61dafb;
   }
+
+  .rectangle {
+    width:70%;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: black;
+    box-shadow: 0px 0px 10px #ccc;
+
+  }
+
+.me-picture {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
