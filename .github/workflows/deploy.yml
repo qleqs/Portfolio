@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup SSH key
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.Home_Server }}
+      run: echo "${{ secrets.Home_Server }}" | tr -d '\r' | ssh-add -
     - name: Deploy to server
       run: |
-        echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
         ssh-keyscan yourserver >> $HOME/.ssh/known_hosts
         ssh user@yourserver "cd /containers/Raqin-website/Portfolio && git pull"
+
 
 
