@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup SSH key
-      uses: actions/setup-ssh@v1
+      uses: gantsign/ssh-auth@v1
       with:
-        ssh-key: ${{ secrets.Home_Server }}
+        ssh-private-key: ${{ secrets.Home_Server }}
     - name: Deploy to server
       run: |
         ssh qleqs@bumblebee.giize.com "cd containers/Raqin-website/Portfolio/ && git pull"
