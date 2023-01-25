@@ -1,19 +1,20 @@
-
 name: Deploy to server
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Setup SSH key
-      uses: gantsign/ssh-auth@v1
-      with:
-        ssh-private-key: ${{ secrets.Home_Server }}
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.Home_Server }}
     - name: Deploy to server
       run: |
-        ssh qleqs@bumblebee.giize.com "cd containers/Raqin-website/Portfolio/ && git pull"
+        echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        ssh-keyscan yourserver >> $HOME/.ssh/known_hosts
+        ssh qleqs@bumblebee.giize.com "cd /containers/Raqin-website/Portfolio && git pull"
+
