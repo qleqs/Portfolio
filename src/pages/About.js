@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Whoami from './whoami';
-import './About.css'
+import './about.css'
 
 function About() {
   const [showText, setShowText] = useState(false);
