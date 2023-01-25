@@ -16,5 +16,6 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
         ssh-keyscan yourserver >> $HOME/.ssh/known_hosts
-        ssh qleqs@bumblebee.giize.com "cd /containers/Raqin-website/Portfolio && git pull"
+        ssh user@yourserver "cd /containers/Raqin-website/Portfolio && git pull"
+
 
