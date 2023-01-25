@@ -1,0 +1,19 @@
+
+name: Deploy to server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup SSH key
+      uses: webfactory/ssh-agent-forwarding@v0.4.0
+      with:
+        ssh-private-key: ${{ secrets.Home_Server }}
+    - name: Deploy to server
+      run: |
+        ssh qleqs@bumblebee.giize.com "cd containers/Raqin-website/Portfolio/ && git pull"
