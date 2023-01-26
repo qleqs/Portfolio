@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup SSH key
-      run: echo "${{ secrets.Home_Server }}" | tr -d '\r' | ssh-add -
+      uses: shimataro/ssh-key-action@v2
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Deploy to server
       run: |
-        ssh-keyscan yourserver >> $HOME/.ssh/known_hosts
-        ssh user@yourserver "cd /containers/Raqin-website/Portfolio && git pull"
-
-
+        ssh user@yourserver "cd /path/to/your/project && git pull"
 
