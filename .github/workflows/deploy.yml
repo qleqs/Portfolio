@@ -17,7 +17,7 @@ jobs:
           username: qleqs
           key: ${{secrets.HOME_SERVER}}
           port: 22
-          script:
+          script: |
             cd Containers/Raqin-website/Portfolio
             git pull origin master
             docker container stop my-react-app
