@@ -15,7 +15,7 @@ jobs:
         with:
           host: bumblebee.giize.com
           username: qleqs
-          key: ${{secrets.Home_Server}}
+          key: ${{secrets.HOME_SECRET}}
           port: 22
           script:
             cd Containers/Raqin-website/Portfolio
