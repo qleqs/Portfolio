@@ -13,7 +13,7 @@ function Home() {
           transition={{ duration: 1 }}
           className="rectangle"
         >
-          <h1>Hey, I'm Qleqs</h1>
+          <h1>Hey, I'm Qleqs.</h1>
         </motion.div>
         <motion.img
           src={me}
