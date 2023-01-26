@@ -1,0 +1,29 @@
+name: Deployment workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: connect ssh.
+        uses: appleboy/ssh-action@master
+        with:
+          host: bumblebee.giize.com
+          username: qleqs
+          key: ${{secrets.HOME_SERVER}}
+          port: 22
+          script: |
+            cd /home/qleqs/containers/Raqin-website/Portfolio
+            git pull origin master
+            docker container stop my-react-app
+            docker container rm my-react-app
+            docker image rm my-react-app
+            docker build -t my-react-app .
+            docker run --name my-react-app -d -p 80:80 -v $(pwd):/usr/src/app my-react-app
+
+
