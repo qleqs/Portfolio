@@ -40,3 +40,10 @@
     width: 250px;
     height: 250px;
 }
+
+.floating-text {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+}
+
