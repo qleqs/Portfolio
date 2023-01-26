@@ -1,19 +1,23 @@
-name: Deploy to server
+name: Deploy to home server
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Setup SSH key
       uses: shimataro/ssh-key-action@v2
       with:
         ssh-private-key: ${{ secrets.Home_Server }}
     - name: Deploy to server
       run: |
-        ssh qleqs@bumblebee.giize.com "cd /containers/Raqin-website/Portfolio && git pull"
+        ssh-keyscan yourserver >> $HOME/.ssh/known_hosts
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete . ssh qleqs@bumblebee.giize.com:/containers/Raqin-website/Portfolio && git pull
+
 
