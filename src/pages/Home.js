@@ -8,35 +8,51 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <motion.div
-          initial={{ opacity: 0, y: -150, height: 800 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -150, height:800 }}
+          animate={{ opacity: .5, y: 0, scale: 0.8 }}
           transition={{ duration: 1 }}
           className="rectangle"
         >
-          <h1>Hey, I'm Qleqs.</h1>
+          <h1>Hey, I'm Raqin.</h1>
         </motion.div>
         <motion.img
           src={me}
           initial={{ y: 200, opacity: 0 }}
-          animate={{ y: -75, x:-120, opacity: 1 }}
+          animate={{ y: -75, x:-120, opacity: 1, scale: 0.8 }}
           transition={{ duration: 2, type: "spring" }}
           className="me-picture"
         />
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 100 }}
-          transition={{ delay: 3, duration: 1 }}
+          initial={{ opacity: 0, y: 400 }}
+          animate={{ opacity: 1, y: 100, scale: 0.8 }}
+          transition={{ delay: 3, duration: 1,type: "spring" }}
           className="floating-text"
         >
-          <p>Welcome to my page!</p>
+          <p>Tech afficionado</p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 50 }}
-          transition={{ delay: 1.5, duration: 1 }}
+          initial={{ opacity: 0, y: 400}}
+          animate={{ opacity: 1, y: 50, scale: 0.8 }}
+          transition={{ delay: 1.75, duration: 1, type: "spring" } }
           className="floating-text"
         >
-          <p>Athelete and future devops engineer</p>
+          <p>Lifelong Learner</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 400}}
+          animate={{ opacity: 1, y: 150, scale: 0.8 }}
+          transition={{ delay: 4.25, duration: 1,type: "spring" }}
+          className="floating-text"
+        >
+          <p>future devops engineer (hopefully)</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 400}}
+          animate={{ opacity: 1, y: 200, scale: 0.8 }}
+          transition={{ delay: 5.5, duration: 1,type: "spring" }}
+          className="floating-text"
+        >
+          <p>Welcome to my site!</p>
         </motion.div>
       </header>
     </div>
@@ -44,4 +60,5 @@ function Home() {
 }
 
 export default Home;
+
 
