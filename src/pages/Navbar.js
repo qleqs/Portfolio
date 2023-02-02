@@ -3,6 +3,7 @@ import './Navbar.css';
 import Home from './Home';
 import Skills from './Skills';
 import About from './About';
+import Resume from './Resume';
 
 const Navbar = () => {
     const [activeTab, setActiveTab] = useState('home');
@@ -30,10 +31,18 @@ const Navbar = () => {
                 >
                     Skills
                 </div>
+                <div 
+                    className={activeTab === 'resume' ? 'active' : ''}
+                    onClick={() => handleTabClick('resume')}
+                >
+                    Resume
+                </div>
             </nav>
-            {activeTab === 'home' ? <Home /> : activeTab === 'about' ? <About /> : <Skills />}
+            {activeTab === 'home' ? <Home /> : activeTab === 'about' ? <About /> : activeTab === 'skills' ? <Skills /> : <Resume />}
         </>
     );
 };
 
 export default Navbar;
+
+

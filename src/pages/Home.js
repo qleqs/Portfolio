@@ -8,7 +8,7 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <motion.div
-          initial={{ opacity: 0, y: -150, height:800 }}
+          initial={{ opacity: 0, y: -150, height:800,scale:0.2 }}
           animate={{ opacity: .5, y: 0, scale: 0.8 }}
           transition={{ duration: 1 }}
           className="rectangle"
@@ -28,7 +28,7 @@ function Home() {
           transition={{ delay: 3, duration: 1,type: "spring" }}
           className="floating-text"
         >
-          <p>Tech afficionado</p>
+          <p>A student pursuing a career in DevOps.</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 400}}
@@ -36,7 +36,7 @@ function Home() {
           transition={{ delay: 1.75, duration: 1, type: "spring" } }
           className="floating-text"
         >
-          <p>Lifelong Learner</p>
+          <p>A dedicated tech enthusiast</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 400}}
@@ -44,7 +44,7 @@ function Home() {
           transition={{ delay: 4.25, duration: 1,type: "spring" }}
           className="floating-text"
         >
-          <p>future devops engineer (hopefully)</p>
+          <p>Welcome to my site!</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 400}}
@@ -52,7 +52,7 @@ function Home() {
           transition={{ delay: 5.5, duration: 1,type: "spring" }}
           className="floating-text"
         >
-          <p>Welcome to my site!</p>
+          <p>Feel free to stick around and learn more about me</p>
         </motion.div>
       </header>
     </div>
